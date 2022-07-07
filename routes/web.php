@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MenuControlador;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/proveedores', function () {
+    return view('proveedores');
+});
+
+Route::get('/productos', function () {
+    return view('productos');
+});
+
+Route::get('/perfil', function () {
+    return view('perfil');
 });
 
 Auth::routes();
