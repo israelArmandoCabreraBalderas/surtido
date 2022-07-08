@@ -26,6 +26,8 @@
                             </div>
                         </div>
                         -->
+                        
+                        <!-- Notas de linea -->
 
                         <div class="row mb-3">
                             <label for="usuario" class="col-md-4 col-form-label text-md-end">{{ __('Usuario') }}</label>
