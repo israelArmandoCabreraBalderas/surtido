@@ -28,12 +28,12 @@
                         -->
 
                         <div class="row mb-3">
-                            <label for="usuario" class="col-md-4 col-form-label text-md-end">{{ __('Usuario') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nombre completo') }}</label>
 
                             <div class="col-md-6">
-                                <input id="usuario" type="text" class="form-control @error('usuario') is-invalid @enderror" name="usuario" value="{{ old('usuario') }}" required autocomplete="usuario">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name">
 
-                                @error('usuario')
+                                @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -87,7 +87,7 @@
 
                                 @if (Route::has('password.request'))
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('¿Olvidaste tu contraseña?') }}
+                                    {{ __('¿Olvido su contraseña?') }}
                                 </a>
                                 @endif
                             </div>
