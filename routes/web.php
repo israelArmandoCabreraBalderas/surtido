@@ -35,6 +35,19 @@ Route::get('/perfil', function () {
     return view('perfil');
 });
 
+Route::get('/contacto', function () {
+    return view('contacto');
+});
+
+Route::get('/surtido', function () {
+    return view('surtido');
+});
+
+Route::get('/vallesoft', function () {
+    return view('vallesoft');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
