@@ -83,7 +83,7 @@
                         </div>
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <input type="submit">
+                                <input type="submit" value="Registrarse">
 
                                 @if (Route::has('password.request'))
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
@@ -92,7 +92,7 @@
                                 @endif
                             </div>
                         </div>
-                        <script>alert('Al registrarse, su información será utilizada y manipulada, si quiere ver el aviso de seguridad, vaya a la sección de  "Aviso de privacidad" en la barra de navegación.');
+                        <script>alert('Al registrarse, su información será utilizada y manipulada, vaya a la sección de  "Aviso de privacidad" en la barra de navegación para obtener más detalles.');
                         </script>
                     </form>
                 </div>

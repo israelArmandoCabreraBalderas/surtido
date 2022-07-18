@@ -45,7 +45,7 @@
                         @guest
                         @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link" onclick="window.open('https://drive.google.com/file/d/1UafpGzfbjhtqCTeM2Cao1-WL0--42ah9/view?usp=sharing', '_blank')">{{ __('Aviso de privacidad') }}</a>
+                            <a class="nav-link" onclick="window.open('https://drive.google.com/file/d/1pMfREX1M9qbO9Zp3Vj9c4mCqcCLqqsx8/view?usp=sharing', '_blank')">{{ __('Aviso de privacidad') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Inicio de sesión') }}</a>
@@ -84,12 +84,58 @@
                                         {{ __('Surtido') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="/contacto">
-                                        {{ __('Contáctanos') }}
+                                    <a class="dropdown-item" href="/buzon">
+                                        {{ __('Buzón') }}
                                     </a>
                                 </div>
                             </li>
                         
+                            <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ __('Mercado') }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item" href="/productos">
+                                    {{ __('Productos') }}
+                                </a>
+
+                                <a class="dropdown-item" href="/vendedores">
+                                    {{ __('Vendedores') }}
+                                </a>
+
+                                <a class="dropdown-item" href="/ofertas">
+                                    {{ __('Ofertas') }}
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ __('Mis transacciones') }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                            <a class="dropdown-item" href="/carrito">
+                                    {{ __('Carrito') }}
+                                </a>
+
+                                <a class="dropdown-item" href="/compras">
+                                    {{ __('Compras') }}
+                                </a>
+
+                                <a class="dropdown-item" href="/misproductos">
+                                    {{ __('Mis productos') }}
+                                </a>
+
+                                <a class="dropdown-item" href="/misventas">
+                                    {{ __('Mis ventas') }}
+                                </a>
+                            </div>
+                        </li>
+
                             <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
@@ -101,18 +147,7 @@
                                     {{ __('Perfil') }}
                                 </a>
 
-                                <a class="dropdown-item" href="/carrito">
-                                    {{ __('Carrito') }}
-                                </a>
-
-                                <a class="dropdown-item" href="/perfil">
-                                    {{ __('Mis compras') }}
-                                </a>
-
-                                <a class="dropdown-item" href="/misproductos">
-                                    {{ __('Mis productos') }}
-                                </a>
-                                <a class="dropdown-item" onclick="window.open('https://drive.google.com/file/d/1UafpGzfbjhtqCTeM2Cao1-WL0--42ah9/view?usp=sharing', '_blank')">
+                                <a class="dropdown-item" onclick="window.open('https://drive.google.com/file/d/1pMfREX1M9qbO9Zp3Vj9c4mCqcCLqqsx8/view?usp=sharing', '_blank')">
                                     {{ __('Aviso de privacidad') }}
                                 </a>
 

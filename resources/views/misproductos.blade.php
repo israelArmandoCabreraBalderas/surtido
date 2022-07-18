@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ Auth::user()->name }}</div>
+                <div class="card-header">{{ __('Mis productos') }}</div>
                 <!--
                 <div class="card-body">
                     <form method="POST" action="https://formspree.io/f/xoqrgavb">

@@ -5,8 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Contáctanos') }}</div>
-
+                <div class="card-header">{{ __('Compras') }}</div>
+                <!--
                 <div class="card-body">
                     <form method="POST" action="https://formspree.io/f/xoqrgavb">
                         @csrf
@@ -15,7 +15,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Nombre') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="name" class="form-control" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="name" class="form-control" name="name" value="{{ old('name') }}" required oninvalid="this.setCustomValidity('Por favor introduzca su nombre');" autocomplete="name" autofocus>
                             </div>
                         </div>
 
@@ -23,7 +23,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Mensaje') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="message" type="text" class="form-control" name="message"></textarea>
+                                <textarea id="message" type="text" class="form-control" name="message" required oninvalid="this.setCustomValidity('Por favor introduzca el mensaje');"></textarea>
                             </div>
                         </div>
                         <div class="row mb-0">
@@ -33,14 +33,13 @@
                         </div>
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <input type="submit">
+                                <input type="submit" value="Enviar">
                             </div>
                         </div>
                     </form>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
-    <!-- jejeje -->
 </div>
 @endsection 

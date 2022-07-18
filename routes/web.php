@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/nosotros', function () {
+/*Route::get('/nosotros', function () {
     return view('nosotros');
 });
 
@@ -29,22 +29,74 @@ Route::get('/proveedores', function () {
 
 Route::get('/productos', function () {
     return view('productos');
-});
+});*/
 
-Route::get('/perfil', function () {
-    return view('perfil');
-});
-
-Route::get('/contacto', function () {
-    return view('contacto');
+Route::get('/vallesoft', function () {
+    return view('vallesoft');
 });
 
 Route::get('/surtido', function () {
     return view('surtido');
 });
 
-Route::get('/vallesoft', function () {
-    return view('vallesoft');
+Route::get('/buzon', function () {
+    return view('buzon');
+});
+
+Route::get('/perfil', function () {
+    return view('perfil');
+});
+
+Route::get('/carrito', function () {
+    return view('carrito');
+});
+
+Route::get('/compras', function () {
+    return view('compras');
+});
+
+Route::get('/compra', function () {
+    return view('compra');
+});
+
+Route::get('/misproductos', function () {
+    return view('misproductos');
+});
+
+Route::get('/miproducto/{id}', function () {
+    return view('miproducto');
+});
+
+Route::get('/misventas', function () {
+    return view('misventas');
+});
+
+Route::get('/miventa/{id}', function () {
+    return view('miventa');
+});
+
+Route::get('/productos', function () {
+    return view('productos');
+});
+
+Route::get('/producto/{id}', function () {
+    return view('producto');
+});
+
+Route::get('/vendedores', function () {
+    return view('vendedores');
+});
+
+Route::get('/vendedor/{id}', function () {
+    return view('vendedor');
+});
+
+Route::get('/ofertas', function () {
+    return view('ofertas');
+});
+
+Route::get('/oferta/{id}', function () {
+    return view('oferta');
 });
 
 Auth::routes();

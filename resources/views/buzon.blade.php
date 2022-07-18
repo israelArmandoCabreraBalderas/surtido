@@ -5,8 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ Auth::user()->name }}</div>
-                <!--
+                <div class="card-header">{{ __('Quejas y sugerencias') }}</div>
+
                 <div class="card-body">
                     <form method="POST" action="https://formspree.io/f/xoqrgavb">
                         @csrf
@@ -37,9 +37,10 @@
                             </div>
                         </div>
                     </form>
-                </div>-->
+                </div>
             </div>
         </div>
     </div>
+    <!-- jejeje -->
 </div>
 @endsection 
