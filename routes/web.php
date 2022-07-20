@@ -47,6 +47,10 @@ Route::get('/perfil', function () {
     return view('perfil');
 });
 
+Route::get('/pagar', function () {
+    return view('pagar');
+});
+
 Route::get('/carrito', function () {
     return view('carrito');
 });

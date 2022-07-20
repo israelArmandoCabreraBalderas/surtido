@@ -83,13 +83,7 @@
                         </div>
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <input type="submit" value="Registrarse">
-
-                                @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('¿Olvido su contraseña?') }}
-                                </a>
-                                @endif
+                                <input class="btn btn-secondary" type="submit" value="Registrarse">
                             </div>
                         </div>
                         <script>alert('Al registrarse, su información será utilizada y manipulada, vaya a la sección de  "Aviso de privacidad" en la barra de navegación para obtener más detalles.');

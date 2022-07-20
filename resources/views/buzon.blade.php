@@ -33,7 +33,7 @@
                         </div>
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <input type="submit" value="Enviar">
+                                <input class="btn btn-secondary" type="submit" value="Enviar">
                             </div>
                         </div>
                     </form>
