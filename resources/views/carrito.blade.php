@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Carrito') }}</div>
                 <div class="card-body">
-                <div class="d-grid gap-2 col-6 mx-auto"><a class="btn btn-secondary" href="/pagar" role="button">Pagar</a></div>
+                    <div class="d-grid gap-2 col-6 mx-auto"><a class="btn btn-secondary" href="/pagar" role="button">Pagar</a></div>
                 </div>
                 <!--
                 <div class="card-body">

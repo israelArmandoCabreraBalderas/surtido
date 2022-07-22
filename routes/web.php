@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuControlador;
+use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +46,38 @@ Route::get('/buzon', function () {
     return view('buzon');
 });
 
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/categorias', [CategoriaController::class, 'index']);
+
+Route::get('/categorias/crear', [CategoriaController::class,'create']);
+
+Route::get('/categorias/ver/{id}', [CategoriaController::class,'show']);
+
+Route::get('/categorias/editar/{id}', [CategoriaController::class,'edit']);
+
+Route::get('/categorias/eliminar/{id}', [CategoriaController::class,'destroy']);
+
+Route::get('/misproductos', [ProductoController::class, 'index']);
+
+Route::get('/misproductos/crear', [ProductoController::class,'create']);
+
+Route::get('/misproductos/ver/{id}', [ProductoController::class,'show']);
+
+Route::get('/misproductos/editar/{id}', [ProductoController::class,'edit']);
+
+Route::get('/misproductos/eliminar/{id}', [ProductoController::class,'destroy']);
+
+Route::post('/categorias/crear', [CategoriaController::class,'store']);
+
+Route::post('/misproductos/crear/{id}', [ProductoController::class,'store']);
+
+Route::put('/categorias/editar/{id}', [CategoriaController::class,'update']);
+
+Route::put('/misproductos/editar/{id}', [ProductoController::class,'update']);
+
 Route::get('/perfil', function () {
     return view('perfil');
 });
@@ -63,12 +98,16 @@ Route::get('/compra', function () {
     return view('compra');
 });
 
-Route::get('/misproductos', function () {
+Route::get('/productos', function () {
     return view('misproductos');
 });
 
-Route::get('/miproducto/{id}', function () {
+Route::get('/productos/{id}', function () {
     return view('miproducto');
+});
+
+Route::get('/miproductoeditar/{id}', function () {
+    return view('miproductoeditar');
 });
 
 Route::get('/misventas', function () {
@@ -102,8 +141,4 @@ Route::get('/ofertas', function () {
 Route::get('/oferta/{id}', function () {
     return view('oferta');
 });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

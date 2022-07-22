@@ -19,6 +19,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
     <!-- Styles --> 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -149,7 +150,11 @@
                                 <a class="dropdown-item" href="/perfil">
                                     {{ __('Perfil') }}
                                 </a>
-
+                                @if (Auth::user()->type == 1)
+                                <a class="dropdown-item" href="/categorias">
+                                    {{ __('Categorías') }}
+                                </a>
+                                @endif
                                 <a class="dropdown-item" onclick="window.open('https://drive.google.com/file/d/1pMfREX1M9qbO9Zp3Vj9c4mCqcCLqqsx8/view?usp=sharing', '_blank')">
                                     {{ __('Aviso de privacidad') }}
                                 </a>

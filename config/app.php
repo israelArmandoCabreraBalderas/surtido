@@ -181,6 +181,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        //'JD\Cloudder\CloudderServiceProvider',
+        CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -212,6 +214,9 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         'ReCaptcha' => Biscolab\ReCaptcha\Facades\ReCaptcha::class,
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        //'Cloudder' => 'JD\Cloudder\Facades\Cloudder',
+        'Cloudinary'=>CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::class,
+        'CloudinaryUpload' => app\Library\CloudinaryUpload::class,
     ])->toArray(),
 
 ];

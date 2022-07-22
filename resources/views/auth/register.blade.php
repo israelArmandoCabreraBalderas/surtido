@@ -86,7 +86,7 @@
                                 <input class="btn btn-secondary" type="submit" value="Registrarse">
                             </div>
                         </div>
-                        <script>alert('Al registrarse, su información será utilizada y manipulada, vaya a la sección de  "Aviso de privacidad" en la barra de navegación para obtener más detalles.');
+                        <script>alert('Al registrarse, su información será utilizada y manipulada, vaya a la sección de  "Aviso de privacidad" en la barra de navegación para obtener más detalles');
                         </script>
                     </form>
                 </div>
