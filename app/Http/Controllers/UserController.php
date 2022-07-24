@@ -3,35 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Producto;
-use App\Models\Categoria;
 use App\Models\User;
-use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use App\Models\Producto;
 
-class ProductoController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     protected $productos;
     protected $categorias;
     protected $users;
     
-    public function __construct(Producto $productos, Categoria $categorias, User $users)
+    public function __construct(Producto $productos, User $users)
     {
         $this->productos = $productos;
-        $this->categorias = $categorias;
         $this->users = $users;
     }
 
-
     public function index($id)
     {
-        $productos = Producto::where('idvendedor', '!=', $id)->get();
-        return view('productos.lista',['productos'=>$productos]);
+        $users = User::where('id', '!=', $id)->get();
+        return view('users.lista',['users'=>$users]);
     }
 
     public function miindex($id)
@@ -84,9 +79,8 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-        $producto = $this->productos->obtenerProductoPorId($id);
-        $user = User::find($producto->idvendedor);
-        return view('productos.ver',['producto'=>$producto],['user'=>$user]);
+        $user = User::find($id);
+        return view('users.perfil',['user'=>$user]);
     }
 
     /**
@@ -97,9 +91,8 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        $categorias = $this->categorias->obtenerCategorias();
         $producto = $this->productos->obtenerProductoPorId($id);
-        return view('productos.editar',['producto'=>$producto], ['categorias'=>$categorias]);
+        return view('productos.editar',['producto'=>$producto]);
     }
 
     /**
@@ -125,7 +118,7 @@ class ProductoController extends Controller
                 Cloudinary::destroy($imagen->getId());
             }
         }
-        if($request->imagen != null){
+        if($request->imagen != $producto->imagen){
             $imagen = $producto->imagen;
             $producto->imagen = Cloudinary::upload ( $producto->imagen->getRealPath())->getSecurePath();
             Cloudinary::destroy($imagen->getId());

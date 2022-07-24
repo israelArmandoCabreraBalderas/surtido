@@ -5,6 +5,7 @@ use App\Http\Controllers\MenuControlador;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,10 +30,7 @@ Route::get('/', function () {
 Route::get('/proveedores', function () {
     return view('proveedores');
 });
-
-Route::get('/productos', function () {
-    return view('productos');
-});*/
+*/
 
 Route::get('/vallesoft', function () {
     return view('vallesoft');
@@ -60,27 +58,27 @@ Route::get('/categorias/editar/{id}', [CategoriaController::class,'edit']);
 
 Route::get('/categorias/eliminar/{id}', [CategoriaController::class,'destroy']);
 
-Route::get('/misproductos', [ProductoController::class, 'index']);
+Route::get('/productos/crear', [ProductoController::class,'create']);
 
-Route::get('/misproductos/crear', [ProductoController::class,'create']);
+Route::get('/productos/{id}', [ProductoController::class, 'index']);
 
-Route::get('/misproductos/ver/{id}', [ProductoController::class,'show']);
+Route::get('/misproductos/{id}', [ProductoController::class, 'miindex']);
 
-Route::get('/misproductos/editar/{id}', [ProductoController::class,'edit']);
+Route::get('/productos/ver/{id}', [ProductoController::class,'show']);
 
-Route::get('/misproductos/eliminar/{id}', [ProductoController::class,'destroy']);
+Route::get('/productos/editar/{id}', [ProductoController::class,'edit']);
 
-Route::post('/categorias/crear', [CategoriaController::class,'store']);
+Route::get('/productos/eliminar/{id}', [ProductoController::class,'destroy']);
 
-Route::post('/misproductos/crear/{id}', [ProductoController::class,'store']);
+Route::get('/vendedores/{id}', [UserController::class,'index']);
+
+Route::post('/productos/crear/{id}', [ProductoController::class,'store']);
 
 Route::put('/categorias/editar/{id}', [CategoriaController::class,'update']);
 
-Route::put('/misproductos/editar/{id}', [ProductoController::class,'update']);
+Route::put('/productos/editar/{id}', [ProductoController::class,'update']);
 
-Route::get('/perfil', function () {
-    return view('perfil');
-});
+Route::get('/perfil/{id}', [UserController::class, 'show']);
 
 Route::get('/pagar', function () {
     return view('pagar');
@@ -98,36 +96,12 @@ Route::get('/compra', function () {
     return view('compra');
 });
 
-Route::get('/productos', function () {
-    return view('misproductos');
-});
-
-Route::get('/productos/{id}', function () {
-    return view('miproducto');
-});
-
-Route::get('/miproductoeditar/{id}', function () {
-    return view('miproductoeditar');
-});
-
 Route::get('/misventas', function () {
     return view('misventas');
 });
 
 Route::get('/miventa/{id}', function () {
     return view('miventa');
-});
-
-Route::get('/productos', function () {
-    return view('productos');
-});
-
-Route::get('/producto/{id}', function () {
-    return view('producto');
-});
-
-Route::get('/vendedores', function () {
-    return view('vendedores');
 });
 
 Route::get('/vendedor/{id}', function () {

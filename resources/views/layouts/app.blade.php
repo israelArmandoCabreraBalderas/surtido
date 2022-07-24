@@ -101,11 +101,11 @@
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
-                                <a class="dropdown-item" href="/productos">
+                                <a class="dropdown-item" href="/productos/{{ Auth::user()->id }}">
                                     {{ __('Productos') }}
                                 </a>
 
-                                <a class="dropdown-item" href="/vendedores">
+                                <a class="dropdown-item" href="/vendedores/ {{ Auth::user()->id }}">
                                     {{ __('Vendedores') }}
                                 </a>
 
@@ -130,7 +130,7 @@
                                     {{ __('Compras') }}
                                 </a>
 
-                                <a class="dropdown-item" href="/misproductos">
+                                <a class="dropdown-item" href="/misproductos/{{ Auth::user()->id }}">
                                     {{ __('Mis productos') }}
                                 </a>
 
@@ -147,7 +147,7 @@
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
-                                <a class="dropdown-item" href="/perfil">
+                                <a class="dropdown-item" href="/perfil/{{ Auth::user()->id }}">
                                     {{ __('Perfil') }}
                                 </a>
                                 @if (Auth::user()->type == 1)
