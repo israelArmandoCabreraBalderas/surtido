@@ -36,7 +36,7 @@ class ProductoController extends Controller
 
     public function miindex($id)
     {
-        $productos = Producto::where('idvendedor', $id)->get();
+        $productos = Producto::where('idvendedor', '=', $id)->get();
         return view('productos.milista',['productos'=>$productos]);
     }
 
@@ -147,7 +147,8 @@ class ProductoController extends Controller
         $producto = Producto::find($id);
         $categoria = Categoria::find($producto->idcategoria);
         $imagen = $producto->imagen;
-        Cloudinary::destroy($imagen->getId());
+        Cloudinary::destroy($imagen);
+        //Cloudinary::destroy($imagen->getId());
         $categoria->cantidadproductos = $categoria->cantidadproductos-1;
         $producto->delete();
         return redirect()->action([ProductoController::class,'index']);

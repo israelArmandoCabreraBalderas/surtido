@@ -34,9 +34,9 @@
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name">
 
                                 @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -48,9 +48,9 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -62,9 +62,9 @@
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -86,8 +86,20 @@
                                 <input class="btn btn-secondary" type="submit" value="Registrarse">
                             </div>
                         </div>
-                        <script>alert('Al registrarse, su información será utilizada y manipulada, vaya a la sección de  "Aviso de privacidad" en la barra de navegación para obtener más detalles');
-                        </script>
+                        <div class="row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <input type="checkbox" name="terminos" class="@error('terminos') is-invalid @enderror">
+                                <label>He leído el <a href="https://drive.google.com/file/d/1pMfREX1M9qbO9Zp3Vj9c4mCqcCLqqsx8/view?usp=sharing">Aviso de privacidad</a> y aceptado los términos y condiciones</label>
+                                @error('terminos')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <!--<script>
+                            alert('Al registrarse, su información será utilizada y manipulada, vaya a la sección de  "Aviso de privacidad" en la barra de navegación para obtener más detalles');
+                        </script>-->
                     </form>
                 </div>
             </div>
